@@ -18,13 +18,13 @@
           <div class="col-xs-6">
             <button click.trigger="edit()"
               if.bind="!isEditing"
-              class="btn btn-default pull-right">Edit</button>
+              class="btn btn-default">Edit</button>
             <button click.trigger="save()"
               if.bind="isEditing"
-              class="btn btn-default pull-right">Save</button>
+              class="btn btn-default">Save</button>
             <button click.trigger="requestNewWallet()"
               if.bind="!session.currentUser.wallet"
-              class="btn btn-default pull-right">Request New Wallet</button>
+              class="btn btn-default">Request New Wallet</button>
           </div>
         </div>
         <div class="row">

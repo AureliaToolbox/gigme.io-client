@@ -8,19 +8,19 @@ The idea here is that the payment is already waiting for the work, it's already 
 
 ## What is it
 
-You sign up for the site and only need to enter your personal information and the name of the business entity you are operating on behalf of.  This is required because all contracts are considered business to business therefore no income laws will be violated.  The first thing you'll do is create a personal and/or company wallet to receive payments at.  We'll call this your ATB wallet.
+You sign up for the site and only need to enter your personal information and the name of the business entity you are operating on behalf of.  This is required because all contracts are considered business to business therefore no income laws will be violated.  The first thing you'll do is create a personal and/or company wallet to receive payments at.  We'll call this your Gigme.io wallet.
 
 There is a listing of work items that can be picked up by anyone.  There is a dollar amount already on the listing.  This is how much money *has already been bountied on this work item*.  You choose items that you want to work on from this list.  It's important to note you should only choose to work on listings that aren't being worked on already by others and ones that you can successfully implement.  That means if the listing doesn't have enough detail you should ping the creator that you'd like to work on it but the details are specific enough.
 
 When it comes to how the work will be performed it's up to you to decide the implementation details but important to know the guidelines of the project to make sure your work will be approved.  This means setting your own hours and completing items on your own time, however keep in mind if the work hasn't been completed it's possible someone else might pick up your listing and work on it.
 
-Once you finish you simply click on a button to "Request Payment" for the work item.  When you do this you'll enter a link (ex. GitHub Pull Request, closed Trello item, signed Docusign doc, etc...) that points to where your work can be verified.  Once the company that requested the work and paid up front for the bounty approves your work it will be instantly transferred to your personal ATB wallet.  Then it is up to you to remove those funds as quickly as possible. (Gigme.io is not meant to be an financial institution and just acts as an intermediary)
+Once you finish you simply click on a button to "Request Payment" for the work item.  When you do this you'll enter a link (ex. GitHub Pull Request, closed Trello item, signed Docusign doc, etc...) that points to where your work can be verified.  Once the company that requested the work and paid up front for the bounty approves your work it will be instantly transferred to your personal Gigme.io wallet.  Then it is up to you to remove those funds as quickly as possible. (Gigme.io is not meant to be an financial institution and just acts as an intermediary)
 
 If you find an item you'd like to have someone else work on you can do the same by creating listings.
 
 ## What kind of work
 
-Initially all of the work items will be entered and paid by me (Patrick Walters, Aurelia Toolbox, LLC.) directly out of my company funds.  These items include various tasks such as writing documentation for Aurelia, fixing open bugs / issues, and improving the Gigme.io platform.  For that reason the bounties won't be extremely high, but should be fair.
+Initially all of the work items will be entered and paid by me (Patrick Walters, Aurelia Toolbox, LLC.) directly out of my company funds.  These items include various tasks such as writing documentation for the platform, fixing open bugs / issues, and improving the Aurelia Toolbox platform.  For that reason the bounties won't be extremely high, but should be fair.
 
 We've already secured an alpha testing client who is putting up $3,500 on to the platform initially.  This is a group of lawyers working on a project with Aurelia to change the way contract law is done.  Should you choose to work on these next items they should be available within the next 5-10 days in the system.  The only upfront requirement is signing an Non-Disclosure Agreement.
 
@@ -37,19 +37,16 @@ After it is reviewed and approved the Litecoin will be immediately transferred t
 
 ## Developing against the platform
 
-To actually develop against the platform you'll need to do *at least* the things listed below (I'll start creating documentation soon!) -
+Clone the repo here - https://github.com/AureliaToolbox/gigme.io-client
 
-1. Install (and be able to run) Ruby on Rails
-2. Install mongodb locally
-3. Request a secret test key for block.io
+You can find the instructions on running the app here -
+
+https://github.com/AureliaToolbox/gigme.io-client/blob/master/docs/setup-instructions.md
 
 ## Next steps
 
 Feel free to check out the available listings and if anything looks interesting, tackle it.
 
-If you want to work on tasks related to the platform - right now the wallet service I am using is block.io.  After talking with the litecoin dev team this week I've found that that service is a great service but that the block.io is completely unresponsive and it is best to avoid their service.
-
-I'm going to start doing some research tonight as to whether Coinbase's wallet APIs or some other service would be better to switch to.  The good thing is the plumbing is all in place so it's basically switching out the backend services.
 
 ## Architecture overview
 
