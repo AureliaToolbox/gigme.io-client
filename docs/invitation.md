@@ -14,13 +14,13 @@ There is a listing of work items that can be picked up by anyone.  There is a do
 
 When it comes to how the work will be performed it's up to you to decide the implementation details but important to know the guidelines of the project to make sure your work will be approved.  This means setting your own hours and completing items on your own time, however keep in mind if the work hasn't been completed it's possible someone else might pick up your listing and work on it.
 
-Once you finish you simply click on a button to "Request Payment" for the work item.  When you do this you'll enter a link (ex. GitHub Pull Request, closed Trello item, signed Docusign doc, etc...) that points to where your work can be verified.  Once the company that requested the work and paid up front for the bounty approves your work it will be instantly transferred to your personal ATB wallet.  Then it is up to you to remove those funds as quickly as possible. (Aurelia Toolbox is not meant to be an financial institution and just acts as an intermediary)
+Once you finish you simply click on a button to "Request Payment" for the work item.  When you do this you'll enter a link (ex. GitHub Pull Request, closed Trello item, signed Docusign doc, etc...) that points to where your work can be verified.  Once the company that requested the work and paid up front for the bounty approves your work it will be instantly transferred to your personal ATB wallet.  Then it is up to you to remove those funds as quickly as possible. (Gigme.io is not meant to be an financial institution and just acts as an intermediary)
 
 If you find an item you'd like to have someone else work on you can do the same by creating listings.
 
 ## What kind of work
 
-Initially all of the work items will be entered and paid by me (Patrick Walters, Aurelia Toolbox, LLC.) directly out of my company funds.  These items include various tasks such as writing documentation for Aurelia, fixing open bugs / issues, and improving the Aurelia Toolbox platform.  For that reason the bounties won't be extremely high, but should be fair.
+Initially all of the work items will be entered and paid by me (Patrick Walters, Aurelia Toolbox, LLC.) directly out of my company funds.  These items include various tasks such as writing documentation for Aurelia, fixing open bugs / issues, and improving the Gigme.io platform.  For that reason the bounties won't be extremely high, but should be fair.
 
 We've already secured an alpha testing client who is putting up $3,500 on to the platform initially.  This is a group of lawyers working on a project with Aurelia to change the way contract law is done.  Should you choose to work on these next items they should be available within the next 5-10 days in the system.  The only upfront requirement is signing an Non-Disclosure Agreement.
 
@@ -29,7 +29,7 @@ The core Aurelia team receives more requests than can currently be handled so th
 ## Getting started
 
 1. Create an account on an exchange that allows buying / selling Litecoin (I use Coinbase.com in the US but there are many other alternatives such as Kraken, GDAX, etc...)  This should be an exchange that you can transfer Litecoin into your own currency so choose wisely!
-2. Visit Aureliatoolbox.com and Register (use your google account for now if you can, or create one.  Github has a redirect issue on the production site at the moment)
+2. Visit gigme.io and Register (use your google account for now if you can, or create one.  Github has a redirect issue on the production site at the moment)
 3. Once logged in, visit the Account page.  Setup the company you are doing business as and request a new wallet for your user.  This creates an application-specific wallet that your payments / bounties will go to.
 4. Pick a dev task from the Listings page.  Complete it and request a payment from the listings page.  Add a link to what is showing the task completed.
 
