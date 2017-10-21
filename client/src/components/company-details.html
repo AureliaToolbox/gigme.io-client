@@ -1,0 +1,21 @@
+<template>
+  <require from="./wallet-details"></require>
+  <template if.bind="company">
+    <h4>${company.name}</h4>
+    <p>${company.website}</p>
+    <strong>${company.url}</strong>
+
+    <template if.bind="company.wallet">
+      <wallet-details
+        title="Company Wallet"
+        wallet.bind="company.wallet"
+        can-send-to.bind="true"
+        owns-wallet.bind="false">
+      </wallet-details>
+    </template>
+    <template if.bind="!company.wallet">
+      <button click.trigger="requestNewWallet()"
+        class="btn btn-default pull-right">Request New Company Wallet</button>
+      </template>
+  </template>
+</template>

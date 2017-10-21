@@ -1,0 +1,28 @@
+<template>
+  <a href="#/payment-requests" class="btn btn-default">Back</a>
+  <article>
+    <h1>${withdrawRequest.user.name}</h1>
+    <p>USD ${withdrawRequest.amount | usdFormat}</p>
+    <hr>
+    <p>
+      <button class="btn btn-default" href="#" if.bind="!withdrawRequest.completed"
+        click.trigger="approve(withdrawRequest)">Approve</button>
+      <button class="btn btn-default" href="#" if.bind="!withdrawRequest.completed"
+        click.trigger="reject(withdrawRequest)">Reject</button>
+    </p>
+
+    <section class="withdrawRequest-meta">
+      <header>
+        <h1>Details</h1>
+      </header>
+      <div>
+        <ul class="unstyled-list">
+          <li>Submitted: ${withdrawRequest.created_at}</li>
+          <li>Requested amount: ${withdrawRequest.amount | usdFormat}</li>
+          <li>To address: ${withdrawRequest.to_address}</li>
+          <li>Status: ${withdrawRequest.completed ? 'Completed' : 'Not yet completed'}</li>
+        </ul>
+      </div>
+    </section>
+  </article>
+</template>

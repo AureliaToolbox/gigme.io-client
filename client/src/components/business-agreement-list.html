@@ -1,0 +1,20 @@
+<template>
+  <table class="table table-striped">
+    <thead>
+      <th>${relatedCompanyPropName}</th>
+    </thead>
+    <tbody>
+      <tr repeat.for="agreement of agreements">
+        <template if.bind="!agreement.isEditing">
+          <td>${agreement[relatedCompanyProp].name}</td>
+          <td>
+            <button class="btn btn-default" href="#" if.bind="canApprove && !agreement.other_agreement_id"
+              click.trigger="approve(agreement)">Approve</button>
+            <button class="btn btn-default" href="#" if.bind="canCancel"
+              click.trigger="cancel(agreement)">Cancel</button>
+          </td>
+        </template>
+      </tr>
+    </tbody>
+  </table>
+</template>

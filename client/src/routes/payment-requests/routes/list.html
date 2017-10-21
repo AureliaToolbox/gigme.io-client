@@ -1,0 +1,10 @@
+<template>
+  <require from="components/payment-requests-list"></require>
+  <require from="components/withdraw-requests-list"></require>
+  <payment-requests-list
+    exchange-rate.bind="currentExchangeRate"
+    payment-requests.bind="paymentRequests"></payment-requests-list>
+  <withdraw-requests-list
+    exchange-rate.bind="currentExchangeRate"
+    withdraw-requests.bind="withdrawRequests"></withdraw-requests-list>
+</template>

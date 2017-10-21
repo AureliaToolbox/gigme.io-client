@@ -1,0 +1,33 @@
+<template>
+  <h2>Admin</h2>
+  <div class="row">
+    <div class="col-xs-6">
+      <h3>Users</h3>
+      <ul>
+        <li repeat.for="user of users">
+          ${user.name}
+        </li>
+      </ul>
+      <h3>Listings</h3>
+      <ul>
+        <li repeat.for="listing of listings">
+          ${listing.title}
+        </li>
+      </ul>
+    </div>
+    <div class="col-xs-6">
+      <h3>Companies</h3>
+      <ul>
+        <li repeat.for="company of companies">
+          ${company.name}
+        </li>
+      </ul>
+      <h3>Listing Types</h3>
+      <ul>
+        <li repeat.for="listingType of listingTypes">
+          ${listingType.name}
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>

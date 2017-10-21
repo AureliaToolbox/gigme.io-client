@@ -1,0 +1,26 @@
+<template>
+  <ux-dialog>
+    <ux-dialog-body>
+      <div class="row">
+        <div class="col-xs-12">
+          <strong>To</strong>
+          <span>${user.name}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <strong>Message</strong>
+          <textarea
+            class="message-body"
+            value.bind="message.body"></textarea>
+        </div>
+      </div>
+    </ux-dialog-body>
+    <ux-dialog-footer>
+      <button
+        class="btn btn-success pull-left"
+        click.trigger="sendMessage()">Send Message</button>
+      <button click.trigger="controller.cancel()">Cancel</button>
+    </ux-dialog-footer>
+  </ux-dialog>
+</template>

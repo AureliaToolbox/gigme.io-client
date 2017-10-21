@@ -1,0 +1,15 @@
+<template>
+  <require from="components/user-dropdown"></require>
+  <aside>
+    <h1 id="brand">GigMe</h1>
+    <nav>
+      <ul>
+        <user-dropdown class="current-user-dropdown"></user-dropdown>
+
+        <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+          <a href.bind="row.href">${row.title}</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</template>

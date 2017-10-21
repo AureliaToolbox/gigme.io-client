@@ -1,0 +1,32 @@
+<template>
+  <h4>Personal Details</h4>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Availability</label>
+      <div class="col-sm-8">
+        <select class="form-control"
+          value.bind="user.availability"
+          matcher.bind="nameMatcher">
+          <option model.bind="null">Choose...</option>
+          <option repeat.for="availability of datastore.availabilities" model.bind="availability">
+            ${availability.name}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Experience</label>
+      <div class="col-sm-8">
+        <select class="form-control"
+          value.bind="user.experience_level"
+          matcher.bind="nameMatcher">
+          <option model.bind="null">Choose...</option>
+          <option repeat.for="experienceLevel of datastore.experienceLevels"
+            model.bind="experienceLevel">
+            ${experienceLevel.name}
+          </option>
+        </select>
+      </div>
+    </div>
+  </form>
+</template>

@@ -1,0 +1,29 @@
+<template>
+  <h1>Companys</h1>
+  <table class="table table-striped">
+    <thead>
+      <th>Name</th>
+      <th>Website</th>
+    </thead>
+    <tbody>
+      <tr repeat.for="company of datastore.companies">
+        <template if.bind="!company.isEditing">
+          <td>
+            <a href="#/companies/details/${company.id}">${company.name}</a>
+          </td>
+          <td>
+            ${company.website}
+          </td>
+        </template>
+        <template if.bind="company.isEditing">
+          <td>
+            <input value.bind="company.name" />
+          </td>
+          <td>
+            <strong if.bind="company.website">${company.website}</strong>
+          </td>
+        </template>
+      </tr>
+    </tbody>
+  </table>
+</template>

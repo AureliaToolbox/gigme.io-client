@@ -1,0 +1,29 @@
+<template>
+  <require from="../company-details"></require>
+  <template if.bind="!isAddingCompany">
+    <company-details company.bind="user.company" user.bind="user"></company-details>
+    <button class="btn btn-default"
+      if.bind="!user.company"
+      click.trigger="addCompany()">Add Company?</button>
+    <a href="#/accounts/company-details/${user.company.id}">View Company Details</a>
+  </template>
+  <template if.bind="isAddingCompany">
+    <form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Name</label>
+      <div class="col-sm-8">
+        <input value.bind="user.company.name" class="form-control" placeholder="Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Website</label>
+      <div class="col-sm-8">
+        <input value.bind="user.company.website" class="form-control" placeholder="Website">
+      </div>
+    </div>
+    <button class="btn btn-success"
+      click.trigger="save()">Save</button>
+    <button class="btn btn-danger"
+      click.trigger="cancel()">Cancel</button>
+  </template>
+</template>

@@ -1,0 +1,1 @@
+{"version":3,"sources":["models/listing-type.js"],"names":["ListingType","data","_id","name","Object","assign"],"mappings":";;;;;;;;;;;;;;;;6BAAaA,W,GAIX,qBAAYC,IAAZ,EAAkB;AAAA;;AAAA,aAHlBC,GAGkB,GAHZ,EAGY;AAAA,aAFlBC,IAEkB,GAFX,EAEW;;AAChBC,eAAOC,MAAP,CAAc,IAAd,EAAoBJ,IAApB;AACD,O","file":"models/listing-type.js","sourceRoot":"/client/src"}

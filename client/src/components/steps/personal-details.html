@@ -1,0 +1,29 @@
+<template>
+  <h4>Personal Details</h4>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Email</label>
+      <div class="col-sm-8">
+        <input value.bind="user.email" type="email" class="form-control" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Name</label>
+      <div class="col-sm-8">
+        <input value.bind="user.name" type="text" class="form-control" placeholder="Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Username</label>
+      <div class="col-sm-8">
+        <input value.bind="user.username" type="text" class="form-control" placeholder="Username">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Image</label>
+      <div class="col-sm-8">
+        <input value.bind="user.image" type="text" class="form-control" placeholder="Image">
+      </div>
+    </div>
+  </form>
+</template>

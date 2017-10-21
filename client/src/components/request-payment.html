@@ -1,0 +1,52 @@
+<template>
+  <div class="modal modal--visible">
+    <div class="modal__content">
+      <div class="row">
+        <div class="col-xs-12">
+          <strong>Total Amount</strong>
+          <span>${value.total | usdFormat}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <strong>Estimated Network Fees</strong>
+          <span>${value.networkFeesInCurrency | usdFormat}</span>
+        </div>
+      </div>
+      <div class="row" if.bind="isChargingControllingInterestFees">
+        <div class="col-xs-12">
+          <strong>Controlling Interest Fees (10%)</strong>
+          <span>${value.controllingInterestFees | usdFormat}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <strong>Remainder</strong>
+          <span>${value.remainder | usdFormat}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <strong>Approval Link <small>(github link, signed e-doc)</small></strong>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-input">
+            <p>Approval URL</span>
+            <input value.bind="approvalUrl" name="contributeAmount" type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal__footer">
+      <button
+        class="btn"
+        click.trigger="request()">Request</button>
+      <button
+        class="btn btn--purple"
+        click.trigger="controller.cancel()">Cancel</button>
+    </div>
+  </div>
+</template>

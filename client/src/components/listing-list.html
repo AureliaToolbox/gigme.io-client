@@ -1,0 +1,68 @@
+<template>
+  <table class="table table-striped">
+    <thead>
+      <th>Title</th>
+      <th>Company</th>
+      <th>Type</th>
+      <th>Bounty</th>
+      <th>Completed?</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input placeholder="Title" value.bind="titleFilter" /></td>
+        <td><input placeholder="Company" value.bind="companyFilter" /></td>
+        <td><input placeholder="Type" value.bind="typeFilter" /></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr repeat.for="listing of displayListings">
+        <template if.bind="!listing.isEditing">
+          <td>
+            <a href="#/listings/details/${listing.id}">${listing.title}</a>
+          </td>
+          <td>
+            <span if.bind="listing.company">
+              ${listing.company.name}
+            </span>
+          </td>
+          <td>
+            <span if.bind="listing.listing_type">
+              ${listing.listing_type.name}
+            </span>
+          </td>
+          <td>
+            <span if.bind="listing.listing_type">
+              ${listing.address.total_value | usdFormat}
+            </span>
+          </td>
+          <td>
+            <span if.bind="listing.listing_type">
+              ${listing.completed}
+            </span>
+          </td>
+        </template>
+        <template if.bind="listing.isEditing">
+          <td>
+            <input value.bind="listing.title" />
+          </td>
+          <td>
+            <strong if.bind="listing.company">${listing.company.name}</strong>
+          </td>
+          <td>
+            <select value.bind="listing.listing_type">
+              <option model.bind="null">Choose...</option>
+              <option repeat.for="listing_type of datastore.listingTypes"
+                      model.bind="listing_type">
+                ${listing_type.name}
+              </option>
+            </select>
+          </td>
+          <td>
+            <button click.trigger="save(listing)" if.bind="listing.isEditing">Save</button>
+          </td>
+        </template>
+      </tr>
+    </tbody>
+  </table>
+  <button if.bind="canAdd" class="btn" click.trigger="add()">Add new listing</button>
+</template>

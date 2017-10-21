@@ -1,0 +1,19 @@
+<template>
+  <div class="modal modal--visible">
+    <div class="modal__content">
+      <ul class="list-unstyled">
+        <li class="row" repeat.for="address of wallet.addresses">
+          <strong>${address.address}</strong>
+        </li>
+      </ul>
+    </div>
+    <div class="modal__footer">
+      <button
+        class="btn"
+        click.trigger="controller.ok()">Ok</button>
+      <button
+        class="btn btn--purple"
+        click.trigger="controller.cancel()">Cancel</button>
+    </div>
+  </div>
+</template>

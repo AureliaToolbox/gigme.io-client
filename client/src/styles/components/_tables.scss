@@ -1,0 +1,50 @@
+table, th, td {
+  border: none;
+}
+
+table td > span.td-ellipsis {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+thead,
+thead > tr,
+tbody > tr {
+  border-bottom: 1px solid rgba(175, 172, 172, 0.12);
+}
+
+tbody > tr {
+  background-color: .25s ease;
+}
+
+tbody > tr:hover {
+  background-color: #333;
+}
+
+td, th {
+  border-radius: 2px;
+  display: table-cell;
+  line-height: 1.429;
+  padding: 15px 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  font-family: $font-raleway;
+}
+
+td a,
+th a {
+  text-decoration: none;
+}

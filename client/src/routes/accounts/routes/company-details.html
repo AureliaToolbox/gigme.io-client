@@ -1,0 +1,36 @@
+<template>
+  <require from="components/business-agreement-list"></require>
+  <require from="components/listing-list"></require>
+  <h3>Company Details</h3>
+  <template if.bind="company">
+    <h4>${company.name}</h4>
+    <p>${company.website}</p>
+    <strong>${company.url}</strong>
+    <template if.bind="canRequestToDoBusiness">
+      <button click.trigger="requestToDoBusiness()" class="btn">
+        Request to do Business with this Company
+      </button>
+    </template>
+  </template>
+
+  <template if.bind="ownsCompany">
+    <h4>Listings from this Company</h4>
+    <listing-list listings.two-way="company.listings"></listing-list>
+  </template>
+
+  <template if.bind="ownsCompany">
+    <h4>Companies this company has requested to do business with</h4>
+    <business-agreement-list agreements.two-way="requestedToAgree"
+      related-company-prop-name="Company"
+      related-company-prop="requesting_company"
+      can-cancel.bind="true"></business-agreement-list>
+  </template>
+
+  <template if.bind="ownsCompany">
+    <h4>Companies requesting to do business with this company</h4>
+    <business-agreement-list agreements.two-way="requestingToAgree"
+      related-company-prop-name="Company"
+      related-company-prop="other_company"
+      can-approve.bind="true"></business-agreement-list>
+  </template>
+</template>

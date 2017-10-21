@@ -1,0 +1,39 @@
+<template>
+  <require from="resources/rounded"></require>
+  <require from="resources/to-currency"></require>
+  <h3>Withdraw Requests</h3>
+  <table class="table table-striped">
+    <thead>
+      <th>Amount</th>
+      <th>To Address</th>
+      <th>Completed</th>
+      <th>User</th>
+    </thead>
+    <tbody>
+      <tr repeat.for="withdrawRequest of withdrawRequests">
+        <template if.bind="!withdrawRequest.isEditing">
+          <td>
+            <a href="#/payment-requests/withdraw-details/${withdrawRequest.id}">
+              ${withdrawRequest.amount | rounded} LTC - (${withdrawRequest.amount | toCurrency:currentExchangeRate | usdFormat} USD)
+            </a>
+          </td>
+          <td>
+            <span if.bind="withdrawRequest.to_address">
+              ${withdrawRequest.to_address}
+            </span>
+          </td>
+          <td>
+            <span if.bind="withdrawRequest.completed">
+              ${withdrawRequest.completed ? 'Completed' : 'Not Approved'}
+            </span>
+          </td>
+          <td>
+            <span if.bind="withdrawRequest.user">
+              ${withdrawRequest.user.name}
+            </span>
+          </td>
+        </template>
+      </tr>
+    </tbody>
+  </table>
+</template>

@@ -1,0 +1,23 @@
+<template>
+  <ux-dialog>
+    <ux-dialog-body>
+      <compose
+        view-model.bind="currentStep.viewModel"
+        model.bind="user">
+      </compose>
+    </ux-dialog-body>
+    <ux-dialog-footer>
+      <button
+        if.bind="!canFinish"
+        click.trigger="nextStep()">
+        Next Step
+      </button>
+      <button click.trigger="controller.cancel()">Cancel</button>
+      <button
+        if.bind="canFinish"
+        click.trigger="controller.ok(user)">
+        Save
+      </button>
+    </ux-dialog-footer>
+  </ux-dialog>
+</template>

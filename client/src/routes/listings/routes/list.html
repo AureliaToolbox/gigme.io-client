@@ -1,0 +1,9 @@
+<template>
+  <require from="resources/completed-filter"></require>
+  <require from="components/listing-list"></require>
+
+  <h1>Open Listings</h1>
+  <listing-list listings.bind="listings | completedFilter: false" can-add="true"></listing-list>
+  <h1>Recently Completed Listings</h1>
+  <listing-list listings.bind="listings | completedFilter: true"></listing-list>
+</template>

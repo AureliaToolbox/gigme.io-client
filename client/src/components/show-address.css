@@ -1,0 +1,18 @@
+<template>
+  <ux-dialog class="large-modal">
+    <ux-dialog-body>
+      <div class="row">
+        <div class="col-xs-12">
+          <strong>Address</strong>
+          <input value.bind="wallet.address" placeholder="address" disabled="disabled" />
+        </div>
+      </div>
+    </ux-dialog-body>
+    <ux-dialog-footer>
+      <button
+        class="btn btn-success pull-left"
+        click.trigger="controller.ok()">Ok</button>
+      <button click.trigger="controller.cancel()">Cancel</button>
+    </ux-dialog-footer>
+  </ux-dialog>
+</template>

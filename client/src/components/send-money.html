@@ -1,0 +1,26 @@
+<template>
+  <div class="modal modal--visible">
+    <div class="modal__content">
+      <div class="row">
+        <div class="col-xs-12">
+          <strong>Amount</strong>
+          <input type="number" value.bind="amount" placeholder="amount to send" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <span>Current Value in USD: <strong>${currentUsdValue | usdFormat}</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal__footer">
+      <button
+        class="btn"
+        click.trigger="send()">Send</button>
+      <button
+        class="btn btn--purple"
+        click.trigger="controller.cancel()">Cancel</button>
+    </div>
+  </div>
+</template>

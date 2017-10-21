@@ -1,0 +1,26 @@
+.unstyled-list,
+.unstyled-list li {
+  line-height: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.unstyled-list li {
+  margin-bottom: 12px;
+}
+
+.unstyled-list li:last-child {
+  margin-bottom: 0;
+}
+
+.spaced-list > li {
+  border-bottom: 1px solid rgba(175, 172, 172, 0.12);
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+}
+.spaced-list > li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}

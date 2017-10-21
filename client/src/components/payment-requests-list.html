@@ -1,0 +1,45 @@
+<template>
+  <require from="resources/rounded"></require>
+  <require from="resources/to-currency"></require>
+  <h3>Payment Requests</h3>
+  <table class="table table-striped">
+    <thead>
+      <th>Amount</th>
+      <th>User</th>
+      <th>Listing</th>
+      <th>Approval URL</th>
+      <th>Completed?</th>
+    </thead>
+    <tbody>
+      <tr repeat.for="paymentRequest of paymentRequests">
+        <template if.bind="!paymentRequest.isEditing">
+          <td>
+            <a href="#/payment-requests/details/${paymentRequest.id}">
+              ${paymentRequest.amount | rounded} LTC - (${paymentRequest.amount | toCurrency:currentExchangeRate | usdFormat} USD)
+            </a>
+          </td>
+          <td>
+            <span if.bind="paymentRequest.user">
+              ${paymentRequest.user.name}
+            </span>
+          </td>
+          <td>
+            <span if.bind="paymentRequest.listing">
+              ${paymentRequest.listing.title}
+            </span>
+          </td>
+          <td>
+            <span if.bind="paymentRequest.approval_url" class="td-ellipsis">
+              ${paymentRequest.approval_url}
+            </span>
+          </td>
+          <td>
+            <span>
+              <i class="fa fa-${paymentRequest.completed ? 'check-square' : 'minus-square'}"></i>
+            </span>
+          </td>
+        </template>
+      </tr>
+    </tbody>
+  </table>
+</template>

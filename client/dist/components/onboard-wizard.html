@@ -1,0 +1,1 @@
+<template><ai-dialog><ai-dialog-body><compose view-model.bind="currentStep.viewModel" user.bind="user"></compose></ai-dialog-body><ai-dialog-footer><button click.trigger="nextStep()">Next Step</button> <button click.trigger="controller.cancel()">Cancel</button> <button if.bind="canFinish" click.trigger="controller.ok(person)">Ok</button></ai-dialog-footer></ai-dialog></template>

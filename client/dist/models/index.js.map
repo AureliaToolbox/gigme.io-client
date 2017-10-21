@@ -1,0 +1,1 @@
+{"version":3,"sources":["models/index.js"],"names":["Listing","Company","ListingType","User","Link"],"mappings":";;;;;;;;iBAAQA,O,YAAAA,O;;;;;kBACAC,O,YAAAA,O;;;;;kBACAC,W,gBAAAA,W;;;;;kBACAC,I,SAAAA,I;;;;;kBACAC,I,SAAAA,I","file":"models/index.js","sourceRoot":"/client/src"}

@@ -1,0 +1,16 @@
+.form-input {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.form-input-dressing,
+input[type="text"] {
+  font-size: 1rem;
+  line-height: 1.25;
+  padding: .5rem .75rem;
+}
+
+.form-input-dressing {
+  background: rgba(0, 0, 0, 0.3);
+}

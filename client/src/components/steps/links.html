@@ -1,0 +1,12 @@
+<template>
+  <require from="components/link-item"></require>
+  <h4>Links</h4>
+  <ul class="list-unstyled">
+    <li repeat.for="link of user.links">
+      <link-item link.bind="link" is-editing.bind="link.isNew"></link-item>
+    </li>
+  </ul>
+  <button
+    class="btn btn-default"
+    click.trigger="addLink()">Add Link</button>
+</template>

@@ -1,0 +1,18 @@
+<template>
+  <template if.bind="!isEditing">
+    ${link.title}
+    ${link.body}
+    ${link.url}
+    <button class="btn btn-default" click.delegate="edit()">
+      Edit
+    </button>
+  </template>
+  <template if.bind="isEditing">
+    <input value.bind="link.title" placeholder="title" />
+    <input value.bind="link.body" placeholder="body" />
+    <input value.bind="link.url" placeholder="url" />
+    <button class="btn btn-default" click.delegate="save()">
+      Save
+    </button>
+  </template>
+</template>

@@ -1,0 +1,24 @@
+<template>
+  <a href="#/companies" class="btn btn-default">Back</a>
+  <h2>Company Details</h2>
+  <div class="row" if.bind="company">
+    <div class="col-xs-6">
+      <div class="well">
+        <div class="row">
+          <div class="col-xs-12">
+            <strong>Name</strong>
+            <span if.bind="!isEditing">${company.name}</span>
+            <input class="form-control" if.bind="isEditing" value.bind="company.name" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <strong>Website</strong>
+            <span if.bind="!isEditing">${company.website}</span>
+            <input class="form-control" if.bind="isEditing" value.bind="company.website" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

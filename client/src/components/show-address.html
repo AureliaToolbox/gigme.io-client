@@ -1,0 +1,21 @@
+<template>
+  <div class="modal modal--visible">
+    <div class="modal__content">
+      <div class="row">
+        <div class="col-xs-12">
+          <strong>Address</strong>
+          <input ref="addressControl" class="col-xs-12 form-control"
+            value.bind="address.address" placeholder="address" readonly="readonly" />
+        </div>
+      </div>
+    </div>
+    <div class="modal__footer">
+      <button
+        class="btn"
+        click.trigger="controller.ok()">Ok</button>
+      <button
+        class="btn btn--purple"
+        click.trigger="controller.cancel()">Cancel</button>
+    </div>
+  </div>
+</template>
