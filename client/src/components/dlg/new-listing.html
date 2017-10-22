@@ -1,34 +1,33 @@
 <template>
-  <ux-dialog class='new-listing-dlg'>
-    <ux-dialog-header>
-      <h2>New Listing</h2>
-      <div>Comapny: <b>${newListing.company.name}</b></div>
-    </ux-dialog-header>
-
-    <ux-dialog-body>
-      <label>
-        Title
-        <input value.bind='newListing.title' />
-      </label>
-      <label>
-        Listing type
-        <select value.bind="newListing.listing_type">
-          <option model.bind="null">Choose...</option>
-          <option repeat.for="listing_type of listingTypes"
-                  model.bind="listing_type">
-            ${listing_type.name}
-          </option>
-        </select>
-      </label>
-      <label>
-        Base Bounty ($)
-        <input type='number' value.bind='newListing.baseBounty' />
-      </label>
-    </ux-dialog-body>
-
-    <ux-dialog-footer>
-      <button click.delegate='close()' >Close</button>
-      <button click.delegate='add()'>Add</button>
-    </ux-dialog-footer>
-  </ux-dialog>
+  <div class="modal modal--visible">
+    <div class="modal__content">
+      <form class="new-listing-form">
+        <h2>New Listing</h2>
+        <div>Company: <b>${newListing.company.name}</b></div>
+        <hr/>
+        <label>
+          Title
+          <input value.bind="newListing.title" />
+        </label>
+        <label>
+          Listing type
+          <select value.bind="newListing.listing_type">
+            <option model.bind="null">Choose...</option>
+            <option repeat.for="listing_type of listingTypes"
+                    model.bind="listing_type">
+              ${listing_type.name}
+            </option>
+          </select>
+        </label>
+      </form>
+    </div>
+    <div class="modal__footer">
+      <button
+        class="btn"
+        click.trigger="close()">Close</button>
+      <button
+        class="btn btn--purple"
+        click.trigger="add()">Add</button>
+    </div>
+  </div>
 </template>

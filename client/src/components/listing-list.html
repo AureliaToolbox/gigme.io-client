@@ -36,11 +36,15 @@
             </span>
           </td>
           <td>
-            <checkbox if.bind='listing.listing_type' value.bind='listing.completed' read-only></checkbox>
+            <checkbox
+              if.bind="listing.listing_type"
+              value.bind="listing.completed"
+              read-only
+              title="${listing.completed ? 'Completed' : 'Not yet completed'}"></checkbox>
           </td>
         </template>
       </tr>
     </tbody>
   </table>
-  <button if.bind='canAdd' class='btn' click.delegate='openNewListingDialog()'>Add new listing</button>
+  <button if.bind="canAdd" class="btn" click.delegate="openNewListingDialog()">Add new listing</button>
 </template>
