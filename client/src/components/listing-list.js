@@ -1,13 +1,13 @@
-import {CompaniesService} from 'services/companies';
-import {ListingsService} from 'services/listings';
-import {Listing, Company, ListingType} from 'models/index';
-import {Session} from 'services/session'
-import {Datastore} from 'resources/datastore'
-import {observable, bindable} from 'aurelia-framework';
-import {WalletsService} from 'services/wallets';
-import {DialogService} from 'aurelia-dialog';
-import {SendMoney} from 'components/send-money';
-import {RequestPayment} from 'components/request-payment';
+import { CompaniesService } from 'services/companies';
+import { ListingsService } from 'services/listings';
+import { Listing, Company, ListingType } from 'models/index';
+import { Session } from 'services/session'
+import { Datastore } from 'resources/datastore'
+import { observable, bindable } from 'aurelia-framework';
+import { WalletsService } from 'services/wallets';
+import { DialogService } from 'aurelia-dialog';
+import { SendMoney } from 'components/send-money';
+import { RequestPayment } from 'components/request-payment';
 
 export class ListingList {
   @bindable listings = [];
@@ -23,6 +23,14 @@ export class ListingList {
   @observable typeFilter = '';
 
   static inject = [CompaniesService, ListingsService, WalletsService, Session, DialogService, Datastore];
+  /**
+   * @param {CompaniesService} companiesService
+   * @param {ListingsService} listingsService
+   * @param {WalletsService} walletsService
+   * @param {Session} session
+   * @param {DialogService} dialogsService
+   * @param {Datastore} datastore
+   */
   constructor(companiesService, listingsService, walletsService, session, dialogsService, datastore) {
     this.listingsService = listingsService;
     this.session = session;
@@ -54,19 +62,29 @@ export class ListingList {
   requestPayment(listing) {
     let model = listing;
 
-    return this.dialogsService.open({ viewModel: RequestPayment, model: model }).then(dialogResult => {
-    });
+    return this.dialogsService.open({ viewModel: RequestPayment, model: model }).then(dialogResult => {});
   }
-  add() {
-    let newListing = new Listing();
-    newListing.isEditing = true;
 
-    let usersCompany = this.session.currentUser.company;
-    newListing.setCompany(usersCompany);
-
-    this.listings.push(newListing);
-    this.filter();
+  openNewListingDialog() {
+    this.dialogsService
+      .open({
+        viewModel: 'components/dlg/new-listing',
+        model: {
+          listingTypes: this.datastore.listingTypes,
+          company: this.session.currentUser.company
+        }
+      })
+      .whenClosed(r => {
+        if (!r.wasCancelled) {
+          let newListing = r.output;
+          this.save(newListing).then(() => {
+            this.listings.push(newListing);
+            this.filter();
+          });
+        }
+      });
   }
+
   titleFilterChanged() {
     this.filter();
   }

@@ -1,0 +1,34 @@
+<template>
+  <ux-dialog class='new-listing-dlg'>
+    <ux-dialog-header>
+      <h2>New Listing</h2>
+      <div>Comapny: <b>${newListing.company.name}</b></div>
+    </ux-dialog-header>
+
+    <ux-dialog-body>
+      <label>
+        Title
+        <input value.bind='newListing.title' />
+      </label>
+      <label>
+        Listing type
+        <select value.bind="newListing.listing_type">
+          <option model.bind="null">Choose...</option>
+          <option repeat.for="listing_type of listingTypes"
+                  model.bind="listing_type">
+            ${listing_type.name}
+          </option>
+        </select>
+      </label>
+      <label>
+        Base Bounty ($)
+        <input type='number' value.bind='newListing.baseBounty' />
+      </label>
+    </ux-dialog-body>
+
+    <ux-dialog-footer>
+      <button click.delegate='close()' >Close</button>
+      <button click.delegate='add()'>Add</button>
+    </ux-dialog-footer>
+  </ux-dialog>
+</template>
