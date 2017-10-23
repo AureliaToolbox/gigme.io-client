@@ -1,10 +1,14 @@
-import {HttpWrapper} from 'services/http-wrapper';
-import {Listing} from 'models/listing';
-import {ListingType} from 'models/listing-type';
-import {Session} from 'services/session';
+import { HttpWrapper } from 'services/http-wrapper';
+import { Listing } from 'models/listing';
+import { ListingType } from 'models/listing-type';
+import { Session } from 'services/session';
 
 export class ListingsService {
   static inject = [HttpWrapper, Session];
+  /**
+   * @param {HttpWrapper} httpWrapper
+   * @param {Session} session
+   */
   constructor(httpWrapper, session) {
     this.session = session;
     this.http = httpWrapper;

@@ -1,0 +1,33 @@
+<template>
+  <div class="modal modal--visible">
+    <div class="modal__content">
+      <form class="new-listing-form">
+        <h2>New Listing</h2>
+        <div>Company: <b>${newListing.company.name}</b></div>
+        <hr/>
+        <label>
+          Title
+          <input value.bind="newListing.title" />
+        </label>
+        <label>
+          Listing type
+          <select value.bind="newListing.listing_type">
+            <option model.bind="null">Choose...</option>
+            <option repeat.for="listing_type of listingTypes"
+                    model.bind="listing_type">
+              ${listing_type.name}
+            </option>
+          </select>
+        </label>
+      </form>
+    </div>
+    <div class="modal__footer">
+      <button
+        class="btn"
+        click.trigger="close()">Close</button>
+      <button
+        class="btn btn--purple"
+        click.trigger="add()">Add</button>
+    </div>
+  </div>
+</template>

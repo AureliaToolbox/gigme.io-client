@@ -36,33 +36,15 @@
             </span>
           </td>
           <td>
-            <span if.bind="listing.listing_type">
-              ${listing.completed}
-            </span>
-          </td>
-        </template>
-        <template if.bind="listing.isEditing">
-          <td>
-            <input value.bind="listing.title" />
-          </td>
-          <td>
-            <strong if.bind="listing.company">${listing.company.name}</strong>
-          </td>
-          <td>
-            <select value.bind="listing.listing_type">
-              <option model.bind="null">Choose...</option>
-              <option repeat.for="listing_type of datastore.listingTypes"
-                      model.bind="listing_type">
-                ${listing_type.name}
-              </option>
-            </select>
-          </td>
-          <td>
-            <button click.trigger="save(listing)" if.bind="listing.isEditing">Save</button>
+            <checkbox
+              if.bind="listing.listing_type"
+              value.bind="listing.completed"
+              read-only
+              title="${listing.completed ? 'Completed' : 'Not yet completed'}"></checkbox>
           </td>
         </template>
       </tr>
     </tbody>
   </table>
-  <button if.bind="canAdd" class="btn" click.trigger="add()">Add new listing</button>
+  <button if.bind="canAdd" class="btn" click.delegate="openNewListingDialog()">Add new listing</button>
 </template>
