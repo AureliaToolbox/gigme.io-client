@@ -17,7 +17,7 @@
       </tr>
       <tr repeat.for="listing of displayListings">
         <template if.bind="!listing.isEditing">
-          <td>
+          <td class="truncate">
             <a href="#/listings/details/${listing.id}">${listing.title}</a>
           </td>
           <td>
