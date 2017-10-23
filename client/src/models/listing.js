@@ -10,6 +10,8 @@ export class Listing {
 
   canEdit = false;
 
+  isEditing = false;
+
   constructor(data) {
     Object.assign(this, data);
     if (this._id) {

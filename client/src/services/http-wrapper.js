@@ -1,8 +1,12 @@
-import {HttpClient} from 'aurelia-http-client';
-import {Session} from 'services/session';
+import { HttpClient } from 'aurelia-http-client';
+import { Session } from 'services/session';
 
 export class HttpWrapper {
-  static inject  = [Session, HttpClient];
+  static inject = [Session, HttpClient];
+  /**
+   * @param {Session} session
+   * @param {HttpClient} httpClient
+   */
   constructor(session, httpClient) {
     this.session = session;
     this.httpClient = httpClient.configure(x => {
