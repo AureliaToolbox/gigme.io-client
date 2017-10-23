@@ -48,3 +48,12 @@ td a,
 th a {
   text-decoration: none;
 }
+
+td.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  & a {
+    white-space: nowrap;
+  }
+}
