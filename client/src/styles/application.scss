@@ -77,7 +77,11 @@ aside {
 main {
   background: $dark;
   flex: 1;
-  padding: 25px 25px 25px 50px;
+  padding: 45px 25px 0 25px;
+
+  @media all and (min-width: 640px) {
+    padding: 25px 25px 25px 50px;
+  }
 }
 
 main.messages-view {
