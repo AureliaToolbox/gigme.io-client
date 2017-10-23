@@ -8,4 +8,27 @@
       display: initial;
     }
   }
+
+  & > a {
+    font-size: 16px;
+    padding-right: 0;
+    padding-top: 0;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+}
+
+.dropdown-menu {
+  left: 38px;
+  top: -18px;
+}
+
+.dropdown-menu li {
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background: transparent;
 }
