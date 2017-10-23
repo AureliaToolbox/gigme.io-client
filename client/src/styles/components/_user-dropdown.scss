@@ -27,6 +27,10 @@
 
 .dropdown-menu li {
   font-size: 14px;
+
+  &:nth-last-child(2) > a {
+    padding-bottom: 0;
+  }
 }
 
 .dropdown-menu a:hover {
