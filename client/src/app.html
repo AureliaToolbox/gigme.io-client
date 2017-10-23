@@ -1,7 +1,9 @@
 <template>
   <require from="./components/nav/left-nav"></require>
+  <require from="./components/nav/top-nav"></require>
 
   <div class="container">
+    <top-nav router.bind="router"></top-nav>
     <left-nav router.bind="router"></left-nav>
     <main as-element="router-view"></main>
   </div>
