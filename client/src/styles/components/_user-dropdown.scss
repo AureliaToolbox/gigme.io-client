@@ -24,11 +24,11 @@
   display: none;
 }
 
-.avatar { 
-  background-size: contain; 
-  display: inline-block; 
-  height: 28px; 
-  margin-right: 10px; 
+.avatar {
+  background-size: contain;
+  display: inline-block;
+  height: 28px;
+  margin-right: 10px;
   vertical-align: middle;
   width: 28px;
 }
@@ -72,16 +72,16 @@ top-nav .dropdown {
 .dropdown-menu {
   left: 38px;
   top: -18px;
-}
 
-.dropdown-menu li {
-  font-size: 14px;
+  li {
+    font-size: 14px;
 
-  &:nth-last-child(2) > a {
-    padding-bottom: 0;
+    &:nth-last-child(2) > a {
+      padding-bottom: 0;
+    }
   }
-}
 
-.dropdown-menu a:hover {
-  background: transparent;
+  a:hover {
+    background: transparent;
+  }
 }
