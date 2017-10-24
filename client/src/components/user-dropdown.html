@@ -1,11 +1,11 @@
 <template>
   <li class="dropdown ${isOpen ? 'open' : ''}">
     <a class="dropdown-toggle ellipsis" href="#" click.trigger="toggleOpen()">
-      <div style="background-image: url('${session.currentUser.image}&amp;s=64'); width: 32px; height: 32px; background-size: contain; display: inline-block;">
+      <div class="avatar" style="background-image: url('${session.currentUser.image}&amp;s=64');">
       </div>
-      <span class="ellipsis pull-right">
+      <span class="ellipsis">
         ${session.currentUser.name}
-       <b class="caret"></b>
+       <b class="caret">&#9660;</b>
       </span>
       <div class="ripple-wrapper"></div>
     </a>

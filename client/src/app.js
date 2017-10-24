@@ -24,7 +24,7 @@ export class App {
         name: 'accounts',
         moduleId: 'routes/accounts/index',
         nav: true,
-        title: 'Accounts'
+        title: 'Manage Account'
       },
       {
         route: 'companies',

@@ -22,3 +22,62 @@ nav li.active a,
 nav a:hover {
   background: #DB245D;
 }
+
+left-nav {
+  display: none;
+  width: 280px;
+
+  @media all and (min-width: 640px) {
+    display: flex;
+  }
+}
+
+top-nav {
+  background: $dark-offset;
+  display: flex;
+  height: 45px;
+  left: 0;
+  padding: 12px 15px;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  h1 {
+    font-size: 22px;
+    line-height: 1;
+    margin: 0;
+    width: 100%;
+
+    .caret {
+      cursor: pointer;
+    }
+  }
+
+  .dropdown-menu li {
+    list-style: none;
+    margin: 0;
+  }
+
+  nav {
+    background: $dark;
+    height: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    top: 100%;
+    transition: height 0.2s ease-in-out;
+    width: 100%;
+    z-index: 1001;
+
+    &.open {
+      height: calc(100vh - 56px);
+    }
+  }
+
+  @media all and (min-width: 640px) {
+    display: none;
+  }
+}

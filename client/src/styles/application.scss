@@ -77,9 +77,13 @@ aside {
 }
 
 main {
-  background: var($dark);
+  background: $dark;
   flex: 1;
-  padding: 25px 25px 25px 50px;
+  padding: 45px 25px 0 25px;
+
+  @media all and (min-width: 640px) {
+    padding: 25px 25px 25px 50px;
+  }
 }
 
 main.messages-view {
@@ -128,4 +132,14 @@ section h2 {
 
 section p {
   margin: 0 0 12px 0;
+}
+
+.caret {
+  font-family: -apple-system, BlinkMacSystemFont, 
+  "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", 
+  "Fira Sans", "Droid Sans", "Helvetica Neue", 
+  sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  vertical-align: middle;
 }
