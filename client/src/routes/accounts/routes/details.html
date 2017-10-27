@@ -28,10 +28,10 @@
       </div>
 
       <ul class="unstyled-list">
-        <li><strong>Email:</strong> <span if.bind="!isEditing">${session.currentUser.email}</span> <input if.bind="isEditing" value.bind="session.currentUser.email"></li>
-        <li><strong>Name:</strong> <span if.bind="!isEditing">${session.currentUser.name}</span> <input if.bind="isEditing" value.bind="session.currentUser.name"></li>
-        <li><strong>Username:</strong> <span if.bind="!isEditing">${session.currentUser.username}</span> <input if.bind="isEditing" value.bind="session.currentUser.username"></li>
-        <li if.bind="isEditing"><input value.bind="session.currentUser.image"></li>
+        <li><label>Email:</label> <span if.bind="!isEditing">${session.currentUser.email}</span> <input if.bind="isEditing" class="input-wide" value.bind="session.currentUser.email" type="text"></li>
+        <li><label>Name:</label> <span if.bind="!isEditing">${session.currentUser.name}</span> <input if.bind="isEditing" class="input-wide" value.bind="session.currentUser.name" type="text"></li>
+        <li><label>Username:</label> <span if.bind="!isEditing">${session.currentUser.username}</span> <input if.bind="isEditing" class="input-wide" value.bind="session.currentUser.username" type="text"></li>
+        <li if.bind="isEditing"><label>Image URL:</label> <input class="input-wide" value.bind="session.currentUser.image" type="text"></li>
       </ul>
     </div>
   </section>
@@ -62,7 +62,7 @@
       <h1>Availability</h1>
     </header>
     <div>
-        <strong if.bind="!isEditing">${session.currentUser.availability.name}</strong>
+        <label if.bind="!isEditing">${session.currentUser.availability.name}</label>
         <select
           if.bind="isEditing"
           value.bind="session.currentUser.availability"
@@ -80,7 +80,7 @@
       <h1>Experience</h1>
     </header>
     <div>
-        <strong if.bind="!isEditing">${session.currentUser.experience_level.name}</strong>
+        <label if.bind="!isEditing">${session.currentUser.experience_level.name}</label>
         <select if.bind="isEditing" value.bind="session.currentUser.experience_level" class="form-control">
           <option model.bind="null">Choose...</option>
           <option repeat.for="experienceLevel of datastore.experienceLevels"

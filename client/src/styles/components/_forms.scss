@@ -6,11 +6,30 @@
 
 .form-input-dressing,
 input[type="text"] {
+  background-color: #FFF;
   font-size: 1rem;
   line-height: 1.25;
   padding: .5rem .75rem;
 }
 
+.input-wide {
+  min-width: 350px;
+}
+
 .form-input-dressing {
   background: rgba(0, 0, 0, 0.3);
+}
+
+label {
+  display: block;
+  margin: 1em 0 .5em 0;
+}
+
+select {
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  display: block;
+  height: 2.25em;
+  padding: .5em .6em;
+  vertical-align: middle;
 }
