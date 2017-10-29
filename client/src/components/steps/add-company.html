@@ -2,9 +2,9 @@
   <require from="../company-details"></require>
   <template if.bind="!isAddingCompany">
     <company-details company.bind="user.company" user.bind="user"></company-details>
-    <button class="btn btn-default"
+    <button class="btn"
       if.bind="!user.company"
-      click.trigger="addCompany()">Add Company?</button>
+      click.trigger="addCompany()">Add Company</button><br>
     <a href="#/accounts/company-details/${user.company.id}">View Company Details</a>
   </template>
   <template if.bind="isAddingCompany">
@@ -21,9 +21,9 @@
         <input value.bind="user.company.website" class="form-control" placeholder="Website">
       </div>
     </div>
-    <button class="btn btn-success"
+    <button class="btn"
       click.trigger="save()">Save</button>
-    <button class="btn btn-danger"
+    <button class="btn"
       click.trigger="cancel()">Cancel</button>
   </template>
 </template>

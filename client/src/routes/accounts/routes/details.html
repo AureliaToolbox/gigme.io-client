@@ -2,128 +2,109 @@
   <require from="components/link-item"></require>
   <require from="components/wallet-details"></require>
   <require from="components/payment-request-details"></require>
-  <h2>Manage account</h2>
-  <div class="row" if.bind="session.currentUser">
-    <div class="col-xs-6">
-      <div class="well">
-        <h3 style="margin-top: 0;">${session.currentUser.name}</h3>
-        <div class="row">
-          <p class="col-xs-6">
-            <a href="bootstrap-elements.html">
-              <span style="background-image: url('${session.currentUser.image}&amp;s=64'); width: 32px; height: 32px; background-size: contain; display: inline-block;" data-original-title="${session.currentUser.name}">
-              </span>
-              <span class="ripple-wrapper"></span>
-            </a>
-          </p>
-          <div class="col-xs-6">
-            <button click.trigger="edit()"
-              if.bind="!isEditing"
-              class="btn btn-default">Edit</button>
-            <button click.trigger="save()"
-              if.bind="isEditing"
-              class="btn btn-default">Save</button>
-            <button click.trigger="requestNewWallet()"
-              if.bind="!session.currentUser.wallet"
-              class="btn btn-default">Request New Wallet</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <strong>E-mail</strong>
-            <span if.bind="!isEditing">${session.currentUser.email}</span>
-            <input class="form-control" if.bind="isEditing" value.bind="session.currentUser.email" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <strong>Name</strong>
-            <span if.bind="!isEditing">${session.currentUser.name}</span>
-            <input class="form-control" if.bind="isEditing" value.bind="session.currentUser.name" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <strong>Username</strong>
-            <span if.bind="!isEditing">${session.currentUser.username}</span>
-            <input class="form-control" if.bind="isEditing" value.bind="session.currentUser.username" />
-          </div>
-        </div>
-        <div class="row" if.bind="isEditing">
-          <div class="col-xs-12">
-            <strong>Image</strong>
-            <input class="form-control" value.bind="session.currentUser.image" />
-          </div>
-        </div>
+  <h1>Manage account</h1>
+
+  <section if.bind="session.currentUser">
+    <header>
+      <h1>My Account</h1>
+    </header>
+    <div>
+      <h2>${session.currentUser.name}</h2>
+
+      <span style="background-image: url('${session.currentUser.image}&amp;s=64'); width: 32px; height: 32px; background-size: contain; display: block; margin-bottom: 12px;" data-original-title="${session.currentUser.name}">
+      </span>
+
+      <div class="btn-group">
+          <button click.trigger="requestNewWallet()"
+          if.bind="!session.currentUser.wallet"
+          class="btn">Request New Wallet</button>
+
+          <button click.trigger="edit()"
+          if.bind="!isEditing"
+          class="btn">Edit Details</button>
+          <button click.trigger="save()"
+          if.bind="isEditing"
+          class="btn btn-default">Save</button>
       </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <wallet-details
-            title="Current Wallet Balance"
-            wallet.bind="session.currentUser.wallet"
-            can-send.bind="false"
-            owns-wallet.bind="true">
-          </wallet-details>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <h3>Payment Requests</h3>
-          <ul class="col-xs-12 list-unstyled">
-            <li repeat.for="paymentRequest of session.currentUser.payment_requests">
-              <payment-request-details payment-request.bind="paymentRequest"></payment-request-details>
-            </li>
-          </ul>
-          <strong>${session.currentUser.availability.name}</strong>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <h3>Availability</h3>
-          <strong if.bind="!isEditing">${session.currentUser.availability.name}</strong>
-          <select class="form-control"
-            if.bind="isEditing"
-            value.bind="session.currentUser.availability"
-            matcher.bind="nameMatcher">
-            <option model.bind="null">Choose...</option>
-            <option repeat.for="availability of datastore.availabilities" model.bind="availability">
-              ${availability.name}
-            </option>
-          </select>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <h3>Experience</h3>
-          <strong if.bind="!isEditing">${session.currentUser.experience_level.name}</strong>
-          <select if.bind="isEditing" value.bind="session.currentUser.experience_level" class="form-control">
-            <option model.bind="null">Choose...</option>
-            <option repeat.for="experienceLevel of datastore.experienceLevels"
-              model.bind="experienceLevel">
-              ${experienceLevel.name}
-            </option>
-          </select>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <h3>Company</h3>
-          <compose view-model="components/steps/add-company" model.bind="session.currentUser"></compose>
-        </div>
-      </div>
+
+      <ul class="unstyled-list">
+        <li><label>Email:</label> <span if.bind="!isEditing">${session.currentUser.email}</span> <input if.bind="isEditing" class="input-wide" value.bind="session.currentUser.email" type="text"></li>
+        <li><label>Name:</label> <span if.bind="!isEditing">${session.currentUser.name}</span> <input if.bind="isEditing" class="input-wide" value.bind="session.currentUser.name" type="text"></li>
+        <li><label>Username:</label> <span if.bind="!isEditing">${session.currentUser.username}</span> <input if.bind="isEditing" class="input-wide" value.bind="session.currentUser.username" type="text"></li>
+        <li if.bind="isEditing"><label>Image URL:</label> <input class="input-wide" value.bind="session.currentUser.image" type="text"></li>
+      </ul>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <h3>Links</h3>
+  </section>
+
+  <section if.bind="session.currentUser">
+    <header>
+      <h1>Payment Requests</h1>
+    </header>
+    <div>
+      <ul class="unstyled-list spaced-list">
+          <li if.bind="!session.currentUser.payment_requests.length">You currently have no pending payment requests.</li>
+          <li repeat.for="paymentRequest of session.currentUser.payment_requests">
+            <payment-request-details payment-request.bind="paymentRequest"></payment-request-details>
+          </li>
+      </ul>
+
+      <wallet-details
+      title="Current Wallet Balance"
+      wallet.bind="session.currentUser.wallet"
+      can-send.bind="false"
+      owns-wallet.bind="true">
+    </wallet-details>
     </div>
-    <ul class="col-xs-12">
-      <li repeat.for="link of session.currentUser.links">
-        <link-item link.bind="link"></link-item>
-      </li>
-    </ul>
-    <div class="col-xs-12">
-      <a href="#" class="btn btn-default"
-        click.trigger="addLink()">Add link</a>
+  </section>
+
+  <section if.bind="session.currentUser">
+    <header>
+      <h1>Availability</h1>
+    </header>
+    <div>
+        <label if.bind="!isEditing">${session.currentUser.availability.name}</label>
+        <select
+          if.bind="isEditing"
+          value.bind="session.currentUser.availability"
+          matcher.bind="nameMatcher">
+          <option model.bind="null">Choose...</option>
+          <option repeat.for="availability of datastore.availabilities" model.bind="availability">
+            ${availability.name}
+          </option>
+        </select>
     </div>
-  </div>
+  </section>
+
+  <section if.bind="session.currentUser">
+    <header>
+      <h1>Experience</h1>
+    </header>
+    <div>
+        <label if.bind="!isEditing">${session.currentUser.experience_level.name}</label>
+        <select if.bind="isEditing" value.bind="session.currentUser.experience_level" class="form-control">
+          <option model.bind="null">Choose...</option>
+          <option repeat.for="experienceLevel of datastore.experienceLevels"
+            model.bind="experienceLevel">
+            ${experienceLevel.name}
+          </option>
+        </select>
+
+        <h3>Company</h3>
+        <compose view-model="components/steps/add-company" model.bind="session.currentUser"></compose>
+    </div>
+  </section>
+
+  <section if.bind="session.currentUser">
+    <header>
+      <h1>Links</h1>
+    </header>
+    <div>
+      <ul class="unstyled-list">
+          <li repeat.for="link of session.currentUser.links">
+            <link-item link.bind="link"></link-item>
+          </li>
+      </ul>
+      <button class="btn" click.trigger="addLink()">Add link</button>
+    </div>
+  </section>
 </template>

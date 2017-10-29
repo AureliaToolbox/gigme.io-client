@@ -1,29 +1,12 @@
 <template>
   <require from="resources/two-decimal-format"></require>
-  <div if.bind="paymentRequest" class="well">
-    <div class="row" if.bind="title">
-      <div class="col-xs-8">
-        <h3 style="margin-top: 5px;">${title}</h3>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-6">
-        <h4>
-          <small>USD Equiv</small>
-          ${value.total | usdFormat}
-        </h4>
-      </div>
-      <div class="col-xs-6">
-        <h4>
-          <small>Status: </small>
-          ${paymentRequest.completed ? 'Completed' : 'Not Approved'}
-        </h4>
-      </div>
-    </div>
-    <div class="row">
-      <p><strong>Approval Url:</strong> ${paymentRequest.approval_url}</p>
-      <p><strong>From:</strong> ${paymentRequest.from_address}</p>
-      <p><strong>To:</strong> ${paymentRequest.to_label ? paymentRequest.to_label : paymentRequest.to_address}</p>
-    </div>
-  </div>
+
+  <ul if.bind="paymentRequest" class="unstyled-list">
+    <li if.bind="title"><strong>Title:</strong> ${title}</li>
+    <li><strong>Status:</strong> ${paymentRequest.completed ? 'Completed' : 'Not Approved'}</li>
+    <li><strong>USD Equivalent:</strong> ${value.total | usdFormat}</li>
+    <li><strong>Approval URL:</strong> ${paymentRequest.approval_url}</li>
+    <li><strong>From:</strong> ${paymentRequest.from_address}</li>
+    <li><strong>To:</strong> ${paymentRequest.to_label ? paymentRequest.to_label : paymentRequest.to_address}</li>
+  </ul>
 </template>
