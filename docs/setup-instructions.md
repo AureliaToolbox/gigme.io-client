@@ -77,6 +77,16 @@ You can add the following rules to redirect to where the files should be served 
         },
         "status": "Inactive",
         "to": "http://localhost:9000/"
+      },
+      {
+        "from":"http://162.243.2.41/",
+        "source":{
+            "key":"Url",
+            "operator":"Contains",
+            "value":"/client/"
+        },
+        "status":"Inactive",
+        "to":"http://localhost:9000/"
       }
     ],
     "ruleType": "Replace",
